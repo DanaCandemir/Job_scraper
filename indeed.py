@@ -24,5 +24,3 @@ def get_jobs(search_term):
     """
 
     url = BASE_URL + f"/jobs?q+={search_term}"
-
-# testing to push
