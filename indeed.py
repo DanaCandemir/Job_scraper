@@ -43,20 +43,6 @@ def _extract_jobs_from_page(url):
     
 
 def get_jobs(search_term):
-    """Extract jobs until the last page
-    :param search_term: str
-    :return: list[dict[str, str]]
-    """
-    jobs = []
-    base_search_url = BASE_URL + f"/jobs?q={search_term}"
-    last_page = _extract_last_page_num(base_search_url)
 
-    for page in range(last_page):
-        url = base_search_url + f"&start={page * 10}"
-        jobs_on_page = _extract_jobs_from_page(url)
-        jobs.extend(jobs_on_page)
 
-    return jobs
-
-url = BASE_URL + f"/jobs?q={search_term}"
-
+    url = BASE_URL + f"/jobs?q+={search_term}"
